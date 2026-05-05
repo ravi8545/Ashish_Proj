@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Linkedin } from 'lucide-react';
+import CallbackForm from './CallbackForm.jsx';
 
 export default function Contact() {
   return (
@@ -19,11 +20,11 @@ export default function Contact() {
               <span className="eyebrow">Let’s Collaborate</span>
               <h2 className="mt-5 section-title">
                 Have a story <br />
-                worth <span className="italic text-accent">filming?</span>
+                worth <span className="gradient-text">filming?</span>
               </h2>
               <p className="mt-5 max-w-md text-white/60">
-                Tell me a little about your project — wedding, brand, music
-                video or event — and I’ll get back within 24 hours.
+                Tell me a little about your project (wedding, brand, music
+                video or event) and I’ll get back within 24 hours.
               </p>
 
               <ul className="mt-8 space-y-4 text-sm">
@@ -31,64 +32,56 @@ export default function Contact() {
                   <span className="grid h-10 w-10 place-items-center rounded-full bg-accent/15 text-accent">
                     <Mail className="h-4 w-4" />
                   </span>
-                  hello@framebyashish.com
+                  <a href="mailto:ashishfaxe@gmail.com" className="hover:text-accent">
+                    ashishfaxe@gmail.com
+                  </a>
                 </li>
                 <li className="flex items-center gap-3 text-white/80">
                   <span className="grid h-10 w-10 place-items-center rounded-full bg-accent/15 text-accent">
                     <Phone className="h-4 w-4" />
                   </span>
-                  +91 98765 43210
+                  <a href="tel:+919120708571" className="hover:text-accent">+91 91207 08571</a>
                 </li>
                 <li className="flex items-center gap-3 text-white/80">
                   <span className="grid h-10 w-10 place-items-center rounded-full bg-accent/15 text-accent">
                     <MapPin className="h-4 w-4" />
                   </span>
-                  Mumbai · Available worldwide
+                  Delhi NCR · Mumbai · Available pan India
                 </li>
               </ul>
+
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <a
+                  href="https://instagram.com/studioyorker"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-white/70 transition hover:border-accent hover:text-accent"
+                >
+                  <Instagram className="h-3.5 w-3.5" /> @studioyorker
+                </a>
+                <a
+                  href="https://instagram.com/cin.ashish"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-white/70 transition hover:border-accent hover:text-accent"
+                >
+                  <Instagram className="h-3.5 w-3.5" /> @cin.ashish
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ashish-maurya-121615271"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-white/70 transition hover:border-accent hover:text-accent"
+                >
+                  <Linkedin className="h-3.5 w-3.5" /> LinkedIn
+                </a>
+              </div>
             </div>
 
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="grid gap-4 self-center rounded-3xl border border-white/10 bg-ink-900/60 p-6 backdrop-blur-xl"
-            >
-              <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="Your Name" placeholder="Jane Doe" />
-                <Field label="Email" type="email" placeholder="jane@email.com" />
-              </div>
-              <Field label="Project Type" placeholder="Wedding film, commercial…" />
-              <div>
-                <label className="mb-1.5 block text-xs uppercase tracking-widest text-white/50">
-                  Message
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="Tell me about your story…"
-                  className="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none transition focus:border-accent"
-                />
-              </div>
-              <button type="submit" className="btn-primary justify-center">
-                Send Inquiry <ArrowRight className="h-4 w-4" />
-              </button>
-            </form>
+            <CallbackForm />
           </div>
         </motion.div>
       </div>
     </section>
-  );
-}
-
-function Field({ label, type = 'text', placeholder }) {
-  return (
-    <div>
-      <label className="mb-1.5 block text-xs uppercase tracking-widest text-white/50">
-        {label}
-      </label>
-      <input
-        type={type}
-        placeholder={placeholder}
-        className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none transition focus:border-accent"
-      />
-    </div>
   );
 }

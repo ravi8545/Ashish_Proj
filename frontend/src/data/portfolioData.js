@@ -1,4 +1,20 @@
-export const categories = ['All', 'Weddings', 'Commercials', 'Music Videos', 'Events'];
+// Static dummy data — replaced by API in services/portfolioService when backend is wired.
+
+export const categories = [
+  'All',
+  'Weddings',
+  'Commercials',
+  'Music Videos',
+  'Events',
+];
+
+// Map UI category labels -> backend enum values
+export const categoryToApi = {
+  Weddings: 'weddings',
+  Commercials: 'commercials',
+  'Music Videos': 'music',
+  Events: 'events',
+};
 
 export const projects = [
   {
@@ -7,6 +23,7 @@ export const projects = [
     category: 'Weddings',
     image:
       'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80',
+    video: 'https://www.youtube.com/watch?v=ScMzIvxBSi4',
   },
   {
     id: 2,
@@ -14,13 +31,15 @@ export const projects = [
     category: 'Commercials',
     image:
       'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80',
+    video: 'https://www.youtube.com/watch?v=ScMzIvxBSi4',
   },
   {
     id: 3,
-    title: 'Echoes — Official MV',
+    title: 'Echoes Official MV',
     category: 'Music Videos',
     image:
       'https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?auto=format&fit=crop&w=1200&q=80',
+    video: 'https://www.youtube.com/watch?v=ScMzIvxBSi4',
   },
   {
     id: 4,
@@ -28,6 +47,7 @@ export const projects = [
     category: 'Events',
     image:
       'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80',
+    video: 'https://www.youtube.com/watch?v=ScMzIvxBSi4',
   },
   {
     id: 5,
@@ -35,13 +55,15 @@ export const projects = [
     category: 'Weddings',
     image:
       'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80',
+    video: 'https://www.youtube.com/watch?v=ScMzIvxBSi4',
   },
   {
     id: 6,
-    title: 'Lumen — Brand Film',
+    title: 'Lumen Brand Film',
     category: 'Commercials',
     image:
       'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80',
+    video: 'https://www.youtube.com/watch?v=ScMzIvxBSi4',
   },
   {
     id: 7,
@@ -49,6 +71,7 @@ export const projects = [
     category: 'Music Videos',
     image:
       'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80',
+    video: 'https://www.youtube.com/watch?v=ScMzIvxBSi4',
   },
   {
     id: 8,
@@ -56,6 +79,7 @@ export const projects = [
     category: 'Events',
     image:
       'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80',
+    video: 'https://www.youtube.com/watch?v=ScMzIvxBSi4',
   },
 ];
 
@@ -63,11 +87,12 @@ export const testimonials = [
   {
     id: 1,
     name: 'Priya & Arjun',
-    role: 'Couple — Wedding Film',
+    role: 'Couple, Wedding Film',
     quote:
       'Ashish turned the most important day of our lives into a cinematic memory we revisit every week. Every frame feels alive.',
     avatar:
       'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
   },
   {
     id: 2,
@@ -77,6 +102,7 @@ export const testimonials = [
       'Working with Ashish is effortless. He understands brand language and translates it into visuals that genuinely sell.',
     avatar:
       'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
   },
   {
     id: 3,
@@ -86,26 +112,55 @@ export const testimonials = [
       'My music video tripled in views the week it dropped. The visuals carry the emotion of the song without saying a word.',
     avatar:
       'https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: 'Karan Verma',
+    role: 'Founder, Verma Apparel',
+    quote:
+      'Our product film delivered by StudioYorker performed 4x better than the previous campaign. Direction and lighting were spot on.',
+    avatar:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: 'Neha Sharma',
+    role: 'Bride',
+    quote:
+      'I have watched my wedding film over fifty times. Ashish captured the emotion of every single moment. Truly cinematic.',
+    avatar:
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: 'Vikram Singh',
+    role: 'Event Manager',
+    quote:
+      'Reliable, calm under pressure and delivers ahead of deadline. Our launch event coverage was flawless.',
+    avatar:
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+    rating: 4,
+  },
+  {
+    id: 7,
+    name: 'Ishita Roy',
+    role: 'Marketing Lead, Brewhouse',
+    quote:
+      'Pan India shoots handled end to end without a single hiccup. Ashish is one of the most professional creators we have worked with.',
+    avatar:
+      'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
   },
 ];
 
 export const services = [
-  {
-    title: 'Wedding Films',
-    desc: 'Timeless cinematic storytelling for the day you’ll never forget.',
-  },
-  {
-    title: 'Commercials',
-    desc: 'Brand films, ads and product stories that move metrics and people.',
-  },
-  {
-    title: 'Music Videos',
-    desc: 'Bold, narrative-driven visuals that turn songs into experiences.',
-  },
-  {
-    title: 'Events',
-    desc: 'Conferences, launches and live shows captured with a director’s eye.',
-  },
+  { title: 'Wedding Films', desc: 'Timeless cinematic storytelling for the day you’ll never forget.' },
+  { title: 'Commercials', desc: 'Brand films, ads and product stories that move metrics and people.' },
+  { title: 'Music Videos', desc: 'Bold, narrative-driven visuals that turn songs into experiences.' },
+  { title: 'Events', desc: 'Conferences, launches and live shows captured with a director’s eye.' },
 ];
 
 export const instagramFeed = [

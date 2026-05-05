@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
-import { Award, Camera, Film, Users } from 'lucide-react';
+import { Camera, Film, Users, GraduationCap, MapPin } from 'lucide-react';
 
 const stats = [
-  { icon: Award, value: '7+', label: 'Years Experience' },
-  { icon: Film, value: '150+', label: 'Projects Delivered' },
-  { icon: Users, value: '120+', label: 'Happy Clients' },
-  { icon: Camera, value: '40+', label: 'Awards & Features' },
+  { icon: Camera, value: '3+', label: 'Years Experience' },
+  { icon: Film, value: '50+', label: 'Projects Delivered' },
+  { icon: Users, value: '40+', label: 'Happy Clients' },
+  { icon: GraduationCap, value: 'AAFT', label: 'Certified' },
 ];
 
 export default function About() {
@@ -30,7 +30,7 @@ export default function About() {
           </div>
 
           <div className="absolute -right-4 bottom-10 hidden rounded-2xl border border-white/10 bg-ink-800/80 p-5 backdrop-blur-xl sm:block">
-            <p className="font-display text-4xl text-accent">150+</p>
+            <p className="font-display text-4xl text-accent">50+</p>
             <p className="text-xs uppercase tracking-widest text-white/60">
               Stories told
             </p>
@@ -48,20 +48,27 @@ export default function About() {
           <span className="eyebrow">About Ashish</span>
           <h2 className="mt-5 section-title">
             I Create Visual Stories <br />
-            That <span className="italic text-accent">Inspire</span>
+            That <span className="gradient-text">Inspire</span>
           </h2>
 
           <p className="mt-6 text-white/70 leading-relaxed">
-            For nearly a decade, I’ve been chasing light, emotion and the kind of
-            quiet moments most people miss. From intimate weddings in the
-            mountains to high-energy commercial shoots in the city, my work lives
-            at the intersection of cinema and authenticity.
+            For over three years, I’ve been chasing light, emotion and the kind
+            of quiet moments most people miss. From intimate weddings to
+            high-energy commercial shoots and music videos, my work lives at the
+            intersection of cinema and authenticity, with 50+ projects delivered
+            across India.
           </p>
           <p className="mt-4 text-white/60 leading-relaxed">
-            I believe great visuals aren’t just seen — they’re felt. Every
-            project starts with a conversation, a mood, a soundtrack in my head,
-            and ends with something you’ll want to watch again and again.
+            AAFT-certified and trained in the craft, I believe great visuals
+            aren’t just seen, they’re felt. Every project starts with a
+            conversation, a mood, a soundtrack in my head, and ends with
+            something you’ll want to watch again and again.
           </p>
+
+          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/70">
+            <MapPin className="h-3.5 w-3.5 text-accent" />
+            Delhi NCR · Mumbai · Pan India
+          </div>
 
           <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6">
             {stats.map((s, i) => (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, Camera } from 'lucide-react';
+import { Menu, X, Aperture } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const links = [
@@ -23,7 +23,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header
+    <motion.header
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
           ? 'border-b border-white/5 bg-ink-900/80 backdrop-blur-xl'
@@ -31,12 +34,17 @@ export default function Navbar() {
       }`}
     >
       <nav className="container-x flex h-20 items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 group">
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-accent/15 ring-1 ring-accent/40 transition group-hover:bg-accent/25">
-            <Camera className="h-4 w-4 text-accent" />
+        <a href="#home" className="group flex items-center gap-3">
+          <span className="grid h-10 w-10 place-items-center rounded-full bg-accent/15 ring-1 ring-accent/40 transition group-hover:bg-accent/25">
+            <Aperture className="h-4 w-4 text-accent" />
           </span>
-          <span className="font-display text-lg tracking-wide">
-            Frame <span className="italic text-accent">by</span> Ashish
+          <span className="leading-none">
+            <span className="block font-display text-2xl tracking-[0.22em] uppercase">
+              Studio<span className="text-accent">Yorker</span>
+            </span>
+            <span className="mt-1 block text-[10px] uppercase tracking-[0.45em] text-white/40">
+              Photographer · Ashish
+            </span>
           </span>
         </a>
 
@@ -73,11 +81,17 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
             className="lg:hidden border-t border-white/5 bg-ink-900/95 backdrop-blur-xl"
           >
             <ul className="container-x flex flex-col py-4">
-              {links.map((l) => (
-                <li key={l.href}>
+              {links.map((l, i) => (
+                <motion.li
+                  key={l.href}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.04 }}
+                >
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
@@ -85,7 +99,7 @@ export default function Navbar() {
                   >
                     {l.label}
                   </a>
-                </li>
+                </motion.li>
               ))}
               <a
                 href="#contact"
@@ -98,6 +112,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }

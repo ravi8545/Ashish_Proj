@@ -8,7 +8,7 @@ export default function Showreel() {
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <span className="eyebrow mx-auto">The Showreel</span>
           <h2 className="mt-5 section-title">
-            A Reel of <span className="italic text-accent">Cinematic</span>{' '}
+            A Reel of <span className="gradient-text">Cinematic</span>{' '}
             Moments
           </h2>
           <p className="mt-4 text-white/60">
